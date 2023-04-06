@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:weatherforecast/core/constants/color_const.dart';
 import 'package:weatherforecast/core/extension/context_ext.dart';
-import 'package:weatherforecast/services/url_launcher_service.dart';
+import 'package:weatherforecast/services/email_send_service.dart';
 
 class AboutTelegramWidget {
   static InkWell telegram(BuildContext context) {

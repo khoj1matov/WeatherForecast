@@ -24,11 +24,11 @@ class MyRoutes {
       case '/cities':
         return MaterialPageRoute(builder: (_) => const CitiesScreen());
       case '/about':
-        return MaterialPageRoute(builder: (_) =>  AboutScreen());
+        return MaterialPageRoute(builder: (_) => AboutScreen());
       case '/rate us':
         return MaterialPageRoute(builder: (_) => const RateUsScreen());
       case '/support':
-        return MaterialPageRoute(builder: (_) =>  SupportScreen());
+        return MaterialPageRoute(builder: (_) => SupportScreen());
       case '/share':
         return MaterialPageRoute(builder: (_) => const ShareScreen());
     }
