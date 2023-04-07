@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:weatherforecast/core/extension/context_ext.dart';
 import 'package:weatherforecast/models/weatherforecast_model.dart';
 
-class SearchIconWidget {
+class SearchResultIconWidget {
   static Image icon(Datum data, BuildContext context) {
     return Image.asset(
       "assets/${data.weather!.description!.replaceAll(RegExp("/"), "")}.png",

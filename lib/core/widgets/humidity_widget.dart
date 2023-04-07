@@ -7,7 +7,6 @@ import 'package:weatherforecast/models/weatherforecast_model.dart';
 class HumidityWidget {
   static Container humidity(BuildContext context, Datum data) {
     return Container(
-      margin: const EdgeInsets.only(top: 20),
       padding: const EdgeInsets.symmetric(vertical: 10),
       height: context.h * 0.1,
       width: context.w * 0.7,

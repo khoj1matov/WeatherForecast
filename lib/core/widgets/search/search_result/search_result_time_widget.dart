@@ -3,7 +3,7 @@ import 'package:jiffy/jiffy.dart';
 import 'package:weatherforecast/core/constants/color_const.dart';
 import 'package:weatherforecast/models/weatherforecast_model.dart';
 
-class SearchTimeWidget {
+class SearchResultTimeWidget {
   static Text time(Datum data) {
     return Text(
       Jiffy.parse(data.datetime.toString()).yMMMMEEEEd,

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class ColorConst {
   static Color kPrimaryWhite = const Color(0xffFFFFFF).withOpacity(0.75);
   static Color kPrimaryBlack = const Color(0xff000000);
-  static Color testFieldColor = const Color(0xff352163);
+  static Color testFieldColor = Color.fromARGB(157, 12, 108, 251);
   static Color kPrimaryTrasparent = Colors.transparent;
 
   static Color kPrimaryRed = Colors.red;
@@ -40,6 +40,17 @@ class ColorConst {
       end: Alignment.bottomCenter,
       colors: <Color>[
         const Color(0x0f857dcd),
+        const Color(0xffFFFFFF).withOpacity(0.4),
+      ],
+    );
+  }
+
+  static LinearGradient cities() {
+    return LinearGradient(
+      begin: Alignment.topLeft,
+      end: Alignment.bottomRight,
+      colors: <Color>[
+        Color.fromARGB(60, 133, 125, 205),
         const Color(0xffFFFFFF).withOpacity(0.4),
       ],
     );

@@ -1,24 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:weatherforecast/core/constants/color_const.dart';
+import 'package:weatherforecast/models/weatherforecast_model.dart';
 
-class SearchTitleWidget {
-  static Row title(String? dataCityName) {
+class SearchResultTempWidget {
+  static Row temp(Datum data) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
+        const SizedBox(width: 10),
         Text(
-          dataCityName!,
+          "${data.temp!.round()}",
           style: TextStyle(
-            fontSize: 30,
+            fontSize: 81,
             fontWeight: FontWeight.w600,
             color: ColorConst.kPrimaryWhite,
           ),
         ),
-        const SizedBox(width: 5),
         Icon(
-          Icons.location_pin,
+          Icons.circle_outlined,
+          size: 20,
           color: ColorConst.kPrimaryWhite,
-          size: 30,
         ),
       ],
     );

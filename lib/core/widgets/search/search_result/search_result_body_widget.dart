@@ -2,18 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:weatherforecast/core/constants/color_const.dart';
 import 'package:weatherforecast/core/extension/context_ext.dart';
 import 'package:weatherforecast/core/widgets/humidity_widget.dart';
-import 'package:weatherforecast/core/widgets/search/search_description_widget.dart';
-import 'package:weatherforecast/core/widgets/search/search_icon_widget.dart';
-import 'package:weatherforecast/core/widgets/search/search_list_add_text_widget.dart';
-import 'package:weatherforecast/core/widgets/search/search_temp_widget.dart';
-import 'package:weatherforecast/core/widgets/search/search_time_widget.dart';
-import 'package:weatherforecast/core/widgets/search/search_title_widget.dart';
+import 'package:weatherforecast/core/widgets/search/search_result/search_result_description_widget.dart';
+import 'package:weatherforecast/core/widgets/search/search_result/search_result_icon_widget.dart';
+import 'package:weatherforecast/core/widgets/search/search_result/search_result_list_add_text_widget.dart';
+import 'package:weatherforecast/core/widgets/search/search_result/search_result_temp_widget.dart';
+import 'package:weatherforecast/core/widgets/search/search_result/search_result_time_widget.dart';
+import 'package:weatherforecast/core/widgets/search/search_result/search_result_title_widget.dart';
 import 'package:weatherforecast/core/widgets/widget_divider.dart';
 import 'package:weatherforecast/models/weatherforecast_model.dart';
+import 'package:weatherforecast/provider/search_provider.dart';
 import 'package:weatherforecast/services/weather_service.dart';
 
-class SearchResultWidget {
-  static SizedBox searchResult(BuildContext context) {
+class SearchResulBodytWidget {
+  static SizedBox searchResult(BuildContext context, SearchProvider sp) {
     return SizedBox(
       width: context.w,
       height: context.h,
@@ -23,7 +24,7 @@ class SearchResultWidget {
           if (!snapshot.hasData) {
             return Center(
               child: Text(
-                "Loading..",
+                "Loading...",
                 style: TextStyle(
                   fontSize: 40,
                   fontWeight: FontWeight.bold,
@@ -45,20 +46,16 @@ class SearchResultWidget {
           } else {
             var data = snapshot.data!.data![0];
             return Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                SizedBox(height: context.h * 0.09),
-                Column(
-                  children: [
-                    SearchAddToListWidget.addToList(snapshot),
-                    DividerWidget.divider(),
-                  ],
-                ),
-                SearchTitleWidget.title(snapshot.data!.cityName),
-                SearchTimeWidget.time(data),
-                SearchIconWidget.icon(data, context),
-                SearchDescriptionWidget.description(data),
-                SearchTempWidget.temp(data),
+                SizedBox(height: context.h * 0.085),
+                SearchResultAddToListWidget.addToList(snapshot, sp),
+                SearchResultTitleWidget.title(snapshot.data!.cityName),
+                SearchResultTimeWidget.time(data),
+                SearchResultIconWidget.icon(data, context),
+                SearchResultDescriptionWidget.description(data),
+                SearchResultTempWidget.temp(data),
                 HumidityWidget.humidity(context, data),
                 SizedBox(),
               ],

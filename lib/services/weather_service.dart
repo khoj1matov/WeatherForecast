@@ -6,7 +6,7 @@ import 'package:weatherforecast/provider/search_provider.dart';
 
 class WeatherService {
   static Future<WeatherForecastModel> selectedData(BuildContext context) async {
-    String cityName = context.watch<SearchProvider>().cityName!;
+    String cityName = context.watch<SearchProvider>().searchString!;
     Response res = await Dio().get(
       "https://api.weatherbit.io/v2.0/forecast/daily?city=$cityName&days=7&key=e98bb938c48b4073b8e6aeafb08ffda0",
     );

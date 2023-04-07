@@ -6,8 +6,11 @@ import 'package:weatherforecast/provider/get_data_provider.dart';
 import 'package:weatherforecast/provider/image_picker_provider.dart';
 import 'package:weatherforecast/provider/search_provider.dart';
 import 'package:weatherforecast/routes/routere.dart';
+import 'package:weatherforecast/services/get_cities_service.dart';
 
 void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await GetCitiesService.getData();
   runApp(
     MultiProvider(
       providers: [

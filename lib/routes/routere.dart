@@ -20,7 +20,7 @@ class MyRoutes {
       case '/home':
         return MaterialPageRoute(builder: (_) => const HomeScreen());
       case '/search':
-        return MaterialPageRoute(builder: (_) => const SearchScreen());
+        return MaterialPageRoute(builder: (_) => SearchScreen());
       case '/cities':
         return MaterialPageRoute(builder: (_) => const CitiesScreen());
       case '/about':
