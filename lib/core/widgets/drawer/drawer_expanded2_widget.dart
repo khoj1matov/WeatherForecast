@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:share_plus/share_plus.dart';
+import 'package:store_redirect/store_redirect.dart';
 import 'package:weatherforecast/core/widgets/drawer/drawer_listtile_widget.dart';
 
 class DrawerExpanded2Widget {
@@ -32,7 +34,10 @@ class DrawerExpanded2Widget {
             text: "Rate Us",
             icon: Icons.star_border,
             onTap: () {
-              Navigator.pushNamed(context, "/rate us");
+              StoreRedirect.redirect(
+                androidAppId: "com.khoj1matov.weatherforecast",
+                iOSAppId: "com.khoj1matov.weatherforecast",
+              );
             },
           ),
           DrawerListTileWidget.listTile(
@@ -46,7 +51,9 @@ class DrawerExpanded2Widget {
             text: "Share This APP",
             icon: Icons.share_outlined,
             onTap: () {
-              Navigator.pushNamed(context, "/share");
+              Share.share(
+                'https://github.com/khoj1matov/HTML_Screenshot_Share/blob/main/pubspec.yaml',
+              );
             },
           ),
         ],

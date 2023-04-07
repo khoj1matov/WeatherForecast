@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:weatherforecast/core/constants/color_const.dart';
 import 'package:weatherforecast/core/extension/context_ext.dart';
-import 'package:weatherforecast/core/widgets/humidity_widget.dart';
+import 'package:weatherforecast/core/widgets/widget_humidity.dart';
 import 'package:weatherforecast/core/widgets/search/search_result/search_result_description_widget.dart';
 import 'package:weatherforecast/core/widgets/search/search_result/search_result_icon_widget.dart';
 import 'package:weatherforecast/core/widgets/search/search_result/search_result_list_add_text_widget.dart';
@@ -18,7 +18,7 @@ class SearchResulBodytWidget {
       width: context.w,
       height: context.h,
       child: FutureBuilder(
-        future: WeatherService.selectedData(context),
+        future: WeatherService.searchData(context),
         builder: ((context, AsyncSnapshot<WeatherForecastModel> snapshot) {
           if (!snapshot.hasData) {
             return Column(
@@ -75,7 +75,7 @@ class SearchResulBodytWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 SizedBox(height: context.h * 0.085),
-                SearchResultAddToListWidget.addToList(snapshot, sp),
+                SearchResultAddToListWidget.addToList(context, snapshot, sp),
                 SearchResultTitleWidget.title(snapshot.data!.cityName),
                 SearchResultTimeWidget.time(data),
                 SearchResultIconWidget.icon(data, context),

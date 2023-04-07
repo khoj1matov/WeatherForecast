@@ -7,7 +7,8 @@ class DrawerBackGroundWidget {
     return Container(
       decoration: const BoxDecoration(
         borderRadius: BorderRadius.only(
-          bottomRight: Radius.circular(100),
+          topRight: Radius.circular(80),
+          bottomRight: Radius.circular(80),
         ),
         image: DecorationImage(
           image: AssetImage("assets/giphy.gif"),
@@ -18,7 +19,8 @@ class DrawerBackGroundWidget {
         decoration: BoxDecoration(
           gradient: ColorConst.drawerBackground(),
           borderRadius: const BorderRadius.only(
-            bottomRight: Radius.circular(100),
+            topRight: Radius.circular(80),
+            bottomRight: Radius.circular(80),
           ),
         ),
         child: DrawerBodyWidget.body(context),

@@ -9,14 +9,14 @@ import 'package:weatherforecast/core/widgets/home/home_loading_widget.dart';
 import 'package:weatherforecast/core/widgets/home/home_temp_widget.dart';
 import 'package:weatherforecast/core/widgets/home/home_time_widget.dart';
 import 'package:weatherforecast/core/widgets/home/home_title_widget.dart';
-import 'package:weatherforecast/core/widgets/humidity_widget.dart';
+import 'package:weatherforecast/core/widgets/widget_humidity.dart';
 import 'package:weatherforecast/models/weatherforecast_model.dart';
 import 'package:weatherforecast/services/weather_service.dart';
 
 class HomeBodyWidget {
   static FutureBuilder<WeatherForecastModel> body(BuildContext context) {
     return FutureBuilder(
-      future: WeatherService.citiesSelectData(context),
+      future: WeatherService.homeData(context),
       builder: ((context, AsyncSnapshot<WeatherForecastModel> snapshot) {
         if (!snapshot.hasData) {
           return HomeLoadingWidget.loading();

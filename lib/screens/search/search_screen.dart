@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:weatherforecast/core/constants/color_const.dart';
 import 'package:weatherforecast/core/extension/context_ext.dart';
-import 'package:weatherforecast/core/mock/cities_mock.dart';
 import 'package:weatherforecast/core/widgets/search/search_borders_widget.dart';
 import 'package:weatherforecast/core/widgets/search/search_result/search_result_cities_widget.dart';
 import 'package:weatherforecast/core/widgets/widget_container_background.dart';
 import 'package:weatherforecast/core/widgets/search/search_result/search_result_body_widget.dart';
 import 'package:weatherforecast/core/widgets/widget_divider.dart';
 import 'package:weatherforecast/core/widgets/widget_to_back_widget.dart';
+import 'package:weatherforecast/provider/cities_list_provider.dart';
 import 'package:weatherforecast/provider/search_provider.dart';
 
 class SearchScreen extends StatefulWidget {
@@ -22,7 +22,6 @@ class _SearchScreenState extends State<SearchScreen> {
   late TextEditingController controller = TextEditingController();
   @override
   Widget build(BuildContext context) {
-    debugPrint(CitiesMock.mapOfCities.toString());
     return ChangeNotifierProvider(
       create: (context) => SearchProvider(),
       child: Consumer<SearchProvider>(
