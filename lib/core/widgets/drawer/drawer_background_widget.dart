@@ -5,26 +5,18 @@ import 'package:weatherforecast/core/widgets/drawer/drawer_body_widget.dart';
 class DrawerBackGroundWidget {
   static Container drawerBackground(BuildContext context) {
     return Container(
-      decoration: const BoxDecoration(
+      decoration: BoxDecoration(
+        gradient: ColorConst.background(),
         borderRadius: BorderRadius.only(
           topRight: Radius.circular(80),
           bottomRight: Radius.circular(80),
         ),
         image: DecorationImage(
-          image: AssetImage("assets/giphy.gif"),
+          image: AssetImage("assets/background.png"),
           fit: BoxFit.cover,
         ),
       ),
-      child: Container(
-        decoration: BoxDecoration(
-          gradient: ColorConst.drawerBackground(),
-          borderRadius: const BorderRadius.only(
-            topRight: Radius.circular(80),
-            bottomRight: Radius.circular(80),
-          ),
-        ),
-        child: DrawerBodyWidget.body(context),
-      ),
+      child: DrawerBodyWidget.body(context),
     );
   }
 }
