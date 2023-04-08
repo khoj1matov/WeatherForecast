@@ -7,7 +7,7 @@ class UrlLauncherService {
     query: 'subject=Hello, my name is Azamjon, how can I help you?',
   );
 
-  static final Uri _urlTelegram = Uri.parse("http://t.me/khoj1matov1");
+  static final Uri _urlTelegram = Uri.parse("tg://t.me/khoj1matov1");
 
   static Future<void> launchEmail() async {
     if (!await launchUrl(_urlEmail)) {
@@ -16,8 +16,8 @@ class UrlLauncherService {
   }
 
   static Future<void> launchTelegran() async {
-    if (!await launchUrl(_urlTelegram)) {
-      throw Exception('Could not launch $_urlTelegram');
+    if (await canLaunchUrl(_urlTelegram)) {
+      await launchUrl(_urlTelegram);
     }
   }
 }

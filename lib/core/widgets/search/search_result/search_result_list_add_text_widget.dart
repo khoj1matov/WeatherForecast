@@ -13,7 +13,7 @@ class SearchResultAddToListWidget {
     SearchProvider sp,
   ) {
     return Padding(
-      padding: const EdgeInsets.only(right: 10, top: 5),
+      padding: const EdgeInsets.only(right: 10),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [

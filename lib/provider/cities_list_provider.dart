@@ -34,14 +34,21 @@ class CitiesListProvider extends ChangeNotifier {
   void deleteCity(BuildContext context, int index) {
     for (var i = 0; i < citiesList.length; i++) {
       if (citiesList[i] == citiesList[index]) {
+        if (citiesList.length > 1) {
+          SnackBarWidget.showSnackBar(
+            context,
+            "${citiesList[index]} deleted😞",
+            Colors.green.withOpacity(0.5),
+          );
+          citiesList.removeAt(index);
+          notifyListeners();
+          return;
+        }
         SnackBarWidget.showSnackBar(
           context,
-          "${citiesList[index]} deleted😞",
+          "This is a selected location, select another location to delete this🤓",
           Colors.green.withOpacity(0.5),
         );
-        citiesList.removeAt(index);
-        notifyListeners();
-        return;
       }
     }
   }

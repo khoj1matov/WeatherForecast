@@ -7,7 +7,7 @@ class SearchResultDescriptionWidget {
     return Text(
       data.weather!.description!.replaceAll(RegExp("/"), " "),
       style: TextStyle(
-        fontSize: 19,
+        fontSize: 22,
         fontWeight: FontWeight.w600,
         color: ColorConst.kPrimaryWhite,
       ),

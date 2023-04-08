@@ -13,10 +13,11 @@ import 'package:weatherforecast/provider/search_provider.dart';
 import 'package:weatherforecast/services/weather_service.dart';
 
 class SearchResulBodytWidget {
-  static SizedBox searchResult(BuildContext context, SearchProvider sp) {
-    return SizedBox(
-      width: context.w,
-      height: context.h,
+  static Expanded searchResult(
+    BuildContext context,
+    SearchProvider sp,
+  ) {
+    return Expanded(
       child: FutureBuilder(
         future: WeatherService.searchData(context),
         builder: ((context, AsyncSnapshot<WeatherForecastModel> snapshot) {
@@ -70,20 +71,22 @@ class SearchResulBodytWidget {
             );
           } else {
             var data = snapshot.data!.data![0];
-            return Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                SizedBox(height: context.h * 0.085),
-                SearchResultAddToListWidget.addToList(context, snapshot, sp),
-                SearchResultTitleWidget.title(snapshot.data!.cityName),
-                SearchResultTimeWidget.time(data),
-                SearchResultIconWidget.icon(data, context),
-                SearchResultDescriptionWidget.description(data),
-                SearchResultTempWidget.temp(data),
-                HumidityWidget.humidity(context, data),
-                SizedBox(),
-              ],
+            return Padding(
+              padding: EdgeInsets.only(top: 10),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  SearchResultAddToListWidget.addToList(context, snapshot, sp),
+                  SearchResultTitleWidget.title(snapshot.data!.cityName),
+                  SearchResultIconWidget.icon(data, context),
+                  SearchResultDescriptionWidget.description(data),
+                  SearchResultTempWidget.temp(data),
+                  SearchResultTimeWidget.time(data),
+                  HumidityWidget.humidity(context, data),
+                  SizedBox(),
+                ],
+              ),
             );
           }
         }),
