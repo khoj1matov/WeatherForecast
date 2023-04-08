@@ -52,7 +52,7 @@ class DrawerExpanded2Widget {
             icon: Icons.share_outlined,
             onTap: () {
               Share.share(
-                'https://github.com/khoj1matov/HTML_Screenshot_Share/blob/main/pubspec.yaml',
+                "https://play.google.com/store/apps/details?id=com.khoj1matov.weatherforecast",
               );
             },
           ),

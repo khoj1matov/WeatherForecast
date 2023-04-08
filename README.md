@@ -1,17 +1,1 @@
-# weatherforecast
-
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-"# WeatherForecast" 
+<img src="screenshots/1_home.png" width="350" title="Home"> <img src="screenshots/2_drawer.png" width="350" title="Drawer"><img src="screenshots/3_citiesList.png" width="350" title="Cities List"><img src="screenshots/4_search.png" width="350" title="Search"><img src="screenshots/5_searchResu.png" width="350" title="Search Result"><img src="screenshots/6_about.png" width="350" title="About"><img src="screenshots/7_support.png" width="350" title="Support">
